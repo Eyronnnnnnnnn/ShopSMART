@@ -5,12 +5,12 @@ export default function CategoryChips(){
     ]
 
     return(
-        <div className="flex  h-20 items-end bg-amber-900">
+        <div className="flex  h-14 items-end ">
 
             <div>
                  <button 
               
-                className="bg-white border-1 border-gray-300  rounded-xl ml-4 px-4 py-2 text-sm"
+                className="bg-blue-700 text-white  border-1 border-gray-300  rounded-xl ml-4 px-4 py-2 text-sm"
                 > All</button>
             </div>
             <div >
