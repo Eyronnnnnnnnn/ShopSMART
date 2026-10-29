@@ -5,7 +5,7 @@ export default function CategoryChips(){
     ]
 
     return(
-        <div className="flex  h-20 items-end">
+        <div className="flex  h-20 items-end bg-amber-900">
 
             <div>
                  <button 
