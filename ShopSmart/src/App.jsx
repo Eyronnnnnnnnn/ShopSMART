@@ -6,7 +6,7 @@ import './App.css'
 
 function App() {
   return (
-    <div className="bg-blue-100/60 w-screen h-screen">
+    <div className="bg-blue-100/30 w-full min-h-screen">
      <Header/>
      <ProductGrid/>
     </div>
