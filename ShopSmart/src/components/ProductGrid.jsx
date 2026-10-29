@@ -20,9 +20,12 @@ export default function  ProductGrid(){
                         </div>
                          <h1 className="font-bold ">Lash Mascara</h1>
                          <p className="text-xs">Beauty</p>
-                         <div className="flex justify-between items-end  min-h-11">
-                            <div>
-                                    <h1>$ 120</h1>
+                         <div className=" bg-amber-400 flex justify-between items-end  min-h-11">
+                            <div className="">
+                               
+                                      <h1>$ 120</h1>
+                                
+                                    
                             </div>
                            <div>
                                     <button className="bg-blue-500 rounded-md h-8 w-25">Add to cart</button>
