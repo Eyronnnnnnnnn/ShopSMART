@@ -1,6 +1,6 @@
 import CategoryChips from "./CategoryChips"
 
-export default function  ProductGrid({data,AddtocarsBtm,setModal}){
+export default function  ProductGrid({data,AddtocarsBtm,setModal,setItemID}){
     if(!data) {
         console.log("Cant Fetch Data")
         return <h1>Cant fetch dataa </h1>
@@ -48,6 +48,7 @@ export default function  ProductGrid({data,AddtocarsBtm,setModal}){
 
                 <button
                 onClick={()=>{
+                setItemID(data.id)
                 AddtocarsBtm(data.id)
                 setModal(true);
                 }}
@@ -105,7 +106,7 @@ export default function  ProductGrid({data,AddtocarsBtm,setModal}){
                         </div>
                           <div>
                             <div>
-                                <button className="text-white bg-blue-600 w-full h-9 rounded-md font-bold ">CheckOut</button>
+                                <button className="text-white bg-blue-600  hover:bg-blue-700 w-full h-9 rounded-md font-bold ">CheckOut</button>
                             </div>
                           </div>
                     </div>

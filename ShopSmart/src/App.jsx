@@ -11,6 +11,7 @@ function App() {
 
   const [cart ,setCart ] = useState();
   const [modal,setModal] = useState(true);
+  const [itemID,setItemID] = useState(); 
 
   const AddtocarsBtm = (id)=>{
     console.log(`Click ${id}`)
@@ -30,11 +31,13 @@ function App() {
      <PurchasModal
      modal = {modal}
      setModal = {setModal}
+     itemID = {itemID}
      />
      <ProductGrid
      data = {data.products}
      AddtocarsBtm={AddtocarsBtm}
       setModal = {setModal}
+      setItemID = {setItemID}
      />
     </div>
   )
