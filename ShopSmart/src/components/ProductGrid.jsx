@@ -11,7 +11,7 @@ export default function  ProductGrid(){
                         <h1 className="font-bold text-2xl text-black/90">All Products</h1>
                         <p className="text-gray-600 mb-5">Showing 6 of Total</p>
                     </div>
-
+                      {/* Product Grid */}
                    <div className="grid grid-cols-3 gap-3">
                      <div className="bg-fuchsia-600 w-60 h-64 rounded-2xl p-3">
                         {/* image */}

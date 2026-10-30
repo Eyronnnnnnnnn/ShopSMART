@@ -55,5 +55,4 @@ What I Learned
 [WRITE THIS AFTER YOU FINISH THE PROJECT: what was hard, what bug taught you the most, what you would improve]
 
 Author
-
-[YOUR NAME] · [GITHUB LINK]
+Aaron Guillermo · [GITHUB LINK]
