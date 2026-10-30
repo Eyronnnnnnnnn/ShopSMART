@@ -9,8 +9,8 @@ import './App.css'
 
 function App() {
 
-  const {cart ,setCart } = useState();
-  const {modal,setModal} = useState(true);
+  const [cart ,setCart ] = useState();
+  const [modal,setModal] = useState(true);
 
   const AddtocarsBtm = (id)=>{
     console.log(`Click ${id}`)
@@ -29,6 +29,7 @@ function App() {
      <Header/>
      <PurchasModal
      modal = {modal}
+     setModal = {setModal}
      />
      <ProductGrid
      data = {data.products}
