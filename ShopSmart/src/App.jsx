@@ -34,6 +34,7 @@ function App() {
      <ProductGrid
      data = {data.products}
      AddtocarsBtm={AddtocarsBtm}
+      setModal = {setModal}
      />
     </div>
   )
