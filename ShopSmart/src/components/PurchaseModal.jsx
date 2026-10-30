@@ -1,6 +1,9 @@
-export default function PurchasModal({modal,setModal}){
+export default function PurchasModal({data,modal,setModal,itemID}){
 
-    if(!modal){return}
+    if(!modal || !itemID){return null}
+
+ 
+
 
     return(
       
@@ -13,7 +16,7 @@ export default function PurchasModal({modal,setModal}){
         <div className="mb-5 flex items-center justify-between">
 
             <h2 className="text-xl font-semibold tracking-tight text-gray-900">
-                Purchase Product
+                {itemID.title}
             </h2>
 
             <button 
@@ -28,17 +31,20 @@ export default function PurchasModal({modal,setModal}){
         {/* Content */}
         <div className="py-3">
 
-            <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/50 bg-white/40 shadow-sm">
-                <span className="text-3xl">🛍️</span>
+            <div className="mb-4 flex h-full w-full items-center justify-center rounded-2xl border border-white/50 bg-white/40 shadow-sm">
+                <img
+                src={itemID.thumbnail}
+                alt={itemID.title}
+                className="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
             </div>
 
             <h3 className="mb-2 text-lg font-semibold text-gray-900">
-                Are you sure?
+               {itemID.price}
             </h3>
 
             <p className="text-sm leading-relaxed text-gray-600">
-                Do you want to proceed with this purchase?
-                Please review your order before confirming.
+              {itemID.description}
             </p>
 
         </div>
@@ -51,7 +57,7 @@ export default function PurchasModal({modal,setModal}){
             </button>
 
             <button className="flex-1 rounded-2xl border border-blue-400/30 bg-blue-500/80 px-4 py-3 font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:bg-blue-600">
-                Confirm
+                Add to cart
             </button>
 
         </div>

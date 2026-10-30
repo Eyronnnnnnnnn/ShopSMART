@@ -10,12 +10,17 @@ import './App.css'
 function App() {
 
   const [cart ,setCart ] = useState();
-  const [modal,setModal] = useState(true);
-  const [itemID,setItemID] = useState(); 
+  const [modal,setModal] = useState(false);
+  const [itemID,setItemID] = useState(null); 
 
   const AddtocarsBtm = (id)=>{
     console.log(`Click ${id}`)
   }
+
+ const handlePurchase = (prod)=>{
+   setItemID(prod)
+ }
+  
 
   const {data,loading,error} = useFetch("https://dummyjson.com/products")
  console.log(data)
@@ -32,12 +37,13 @@ function App() {
      modal = {modal}
      setModal = {setModal}
      itemID = {itemID}
+     data= {data}
      />
      <ProductGrid
      data = {data.products}
      AddtocarsBtm={AddtocarsBtm}
       setModal = {setModal}
-      setItemID = {setItemID}
+      handlePurchase = {handlePurchase}
      />
     </div>
   )
