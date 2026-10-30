@@ -8,7 +8,7 @@ import './App.css'
 function App() {
 
   const {data,loading,error} = useFetch("https://dummyjson.com/products")
-
+ console.log(data)
      if (loading ) { 
       console.log("CANT FETCH DATA")
       return <h1>cant fetch data</h1>

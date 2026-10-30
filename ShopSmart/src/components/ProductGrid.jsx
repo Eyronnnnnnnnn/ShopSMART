@@ -16,35 +16,75 @@ export default function  ProductGrid({data}){
                         <p className="text-gray-600 mb-5">Showing 6 of Total</p>
                     </div>
                         <div className="grid grid-cols-3 gap-3 h-[600px] overflow-y-auto">
-                    {data.map((data)=>(
-                         
-                     <div key={data.id} className="bg-fuchsia-600 w-60 h-64 rounded-2xl p-3 ">
-                        {/* image */}
-                        <div className="bg-amber-400 w-full min-h-36 rounded-2xl">
-                            
-                        </div>
-                         <h1 className="font-bold ">{data.title}</h1>
-                         <p className="text-xs">{data.category}</p>
-                         <div className=" bg-amber-400 flex justify-between items-end  min-h-11">
-                            <div className="">
-                               
-                                      <h1>{data.price}</h1>
-                                
-                                    
-                            </div>
-                           <div>
-                                    <button className="bg-blue-500 rounded-md h-8 w-25">Add to cart</button>
-                           </div>
-                           
-                         </div>
-                     </div>
-                   
-                    ))}
+                    {data.map((data) => (
+    <div
+        key={data.id}
+        className="bg-white w-80 min-w-0 rounded-2xl p-3 shadow-sm border border-gray-200 hover:shadow-lg transition duration-300 flex flex-col"
+    >
+        {/* Product image */}
+        <div className="bg-gray-100 w-full aspect-square rounded-xl overflow-hidden flex items-center justify-center">
+            <img
+                src={data.thumbnail}
+                alt={data.title}
+                className="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+        </div>
+
+        {/* Product details */}
+        <div className="flex flex-col flex-1 mt-3">
+            <h1 className="font-semibold text-sm text-gray-800 line-clamp-1">
+                {data.title}
+            </h1>
+
+            <p className="text-xs text-gray-500 mt-1 capitalize">
+                {data.category}
+            </p>
+
+            {/* Price and button */}
+            <div className="flex justify-between items-center gap-2 mt-auto pt-4">
+                <h1 className="font-bold text-lg text-gray-900">
+                    ${data.price}
+                </h1>
+
+                <button className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium rounded-lg px-3 py-2 transition">
+                    Add to cart
+                </button>
+            </div>
+        </div>
+    </div>
+))}
                       {/* Product Grid */}
                 </div>
                 </div>
                 {/* right side */}
-                <div className="bg-amber-600 w-full lg:w-112 shrink-0">ds</div>
+                <div className=" w-full lg:w-112 shrink-0 flex justify-center">
+                   <div className="bg-white w-85 h-80 rounded-lg  p-4">
+                    <div>
+                        <h1 className="font-bold text-lg">Your cart</h1>
+                    </div>
+                    <div className=" mt-5 flex justify-between">
+                        <div>
+                        <p>Lash Mascara</p>
+                        <p>1231</p>
+                        </div>
+
+                       <div className="00 w-38 gap-2 flex justify-end">
+                        <div className=" w-13">
+                           <button className=" bg-white-100 w-full h-full border-2 border-gray-800/20 rounded-lg">+</button>
+                        </div>
+                        <div className=" w-6 flex justify-center items-center">
+                            <div>
+                                <p>2</p>
+                            </div>
+                        </div>
+                        <div className=" w-13">
+                              <button className=" bg-white-100 w-full h-full border-2 border-gray-800/20 rounded-lg">+</button>
+                        </div>
+                       </div>
+                       
+                    </div>
+                   </div>
+                </div>
             </div>
         </div>
     )
