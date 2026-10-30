@@ -1,10 +1,13 @@
-export default function CategoryChips(){
-
-    const categories = [
+import { memo } from "react"
+ const CategoryChips = memo(function CategoryChips(){
+      const categories = [
         "Beauty","Fragrance", "Furniture","Groceries"
     ]
 
-    return(
+   
+ return(
+
+    
         <div className="flex flex-wrap min-h-14 items-end gap-3 p-4">
 
             <div>
@@ -24,4 +27,8 @@ export default function CategoryChips(){
           
         </div>
     )
-}
+ })
+
+  
+
+export default CategoryChips

@@ -10,6 +10,10 @@ function App() {
 
   const {cart ,setCart } = useState();
 
+  const AddtocarsBtm = (id)=>{
+    console.log(`Click ${id}`)
+  }
+
   const {data,loading,error} = useFetch("https://dummyjson.com/products")
  console.log(data)
      if (loading ) { 
@@ -21,6 +25,7 @@ function App() {
      <Header/>
      <ProductGrid
      data = {data.products}
+     AddtocarsBtm={AddtocarsBtm}
      />
     </div>
   )
