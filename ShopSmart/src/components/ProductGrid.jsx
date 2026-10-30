@@ -58,14 +58,18 @@ export default function  ProductGrid({data}){
                 </div>
                 {/* right side */}
                 <div className=" w-full lg:w-112 shrink-0 flex justify-center">
+
+                    {/* Add to cart */}
                    <div className="bg-white w-85 h-80 rounded-lg  p-4">
                     <div>
                         <h1 className="font-bold text-lg">Your cart</h1>
                     </div>
-                    <div className=" mt-5 flex justify-between">
+                    {/* cart list */}
+                    <div className=" h-37 ">
+                       <div className="  mt-5 flex justify-between">
                         <div>
                         <p>Lash Mascara</p>
-                        <p>1231</p>
+                        <p className="text-sm text-gray-500">$ 231</p>
                         </div>
 
                        <div className="00 w-38 gap-2 flex justify-end">
@@ -82,6 +86,27 @@ export default function  ProductGrid({data}){
                         </div>
                        </div>
                        
+                    </div>
+                    </div>
+                    <div className=" h-20 flex flex-col justify-between">
+                        <div className="flex justify-between">
+                           <div>
+                            <h1 className="font-bold">TOTAL</h1>
+                           </div>
+                           <div>
+                            <h1 className="font-bold">$ 231</h1>
+                           </div>
+                         
+                        </div>
+                          <div>
+                            <div>
+                                <button className="text-white bg-blue-600 w-full h-9 rounded-md font-bold ">CheckOut</button>
+                            </div>
+                          </div>
+                    </div>
+                   
+                    <div>
+                        
                     </div>
                    </div>
                 </div>

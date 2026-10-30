@@ -1,7 +1,7 @@
 export default function CategoryChips(){
 
     const categories = [
-        "beauty","Fragrance", "Furniture","Groceries"
+        "Beauty","Fragrance", "Furniture","Groceries"
     ]
 
     return(
