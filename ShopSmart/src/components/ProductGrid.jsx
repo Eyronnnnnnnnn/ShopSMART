@@ -75,7 +75,7 @@ export default function  ProductGrid({data,AddtocarsBtm,setModal,ModalInfo,cart}
                     </div>
                     {/* cart list */}
                      {cart.map((cart)=>(
-                          <div key={cart} className=" h-37 ">
+                          <div  className=" h-37 ">
                        <div className="  mt-5 flex justify-between">
                         <div>
                         <p>Lash Mascara</p>

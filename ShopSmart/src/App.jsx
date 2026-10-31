@@ -14,12 +14,12 @@ function App() {
   const [itemID, setItemID] = useState(null);
 
   const AddtocarsBtm = (newid,newtitle,newprice) => {
-    const Addedtocart = [
-      {id : newid},
-      {title : newtitle},
-      {price :newprice }
-    ]
-    setCart([...cart , ])
+    const Addedtocart = {
+      id : newid,
+      title : newtitle,
+      price :newprice 
+    }
+    setCart([...cart , Addedtocart])
   };
 
   const ModalInfo = (modalData) => {
