@@ -12,14 +12,20 @@ function App() {
   const [cart ,setCart ] = useState([]);
   const [modal, setModal] = useState(false);
   const [itemID, setItemID] = useState(null);
+  const [quantity,setQuantity] = useState(1);
 
   const AddtocarsBtm = (newid,newtitle,newprice,newthumbnail) => {
     const Addedtocart = {
       id : newid,
       title : newtitle,
       price :newprice ,
+      quantity: quantity,
       thumbnail : newthumbnail 
     }
+      const check =  cart.some( item=> item.id === newid)
+  
+   
+     console.log(check)
     setCart([...cart , Addedtocart])
   };
 
