@@ -13,11 +13,12 @@ function App() {
   const [modal, setModal] = useState(false);
   const [itemID, setItemID] = useState(null);
 
-  const AddtocarsBtm = (newid,newtitle,newprice) => {
+  const AddtocarsBtm = (newid,newtitle,newprice,newthumbnail) => {
     const Addedtocart = {
       id : newid,
       title : newtitle,
-      price :newprice 
+      price :newprice ,
+      thumbnail : newthumbnail 
     }
     setCart([...cart , Addedtocart])
   };
