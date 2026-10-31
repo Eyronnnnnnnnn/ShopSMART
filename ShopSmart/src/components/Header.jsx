@@ -1,4 +1,4 @@
-export default function Header() {
+export default function Header({cart}) {
   return (
     <div className="bg-white w-full min-h-23 flex flex-col md:flex-row">
     <div className="w-full md:w-auto p-4 md:p-7 flex justify-center md:justify-start shrink-0">
@@ -29,7 +29,7 @@ export default function Header() {
         </div>
         <div className=" border-2 border-gray-300 w-15 h-10 rounded-lg  flex items-center justify-center gap-1">
            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 21a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3m-8 0a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3M3.71 5.4h15.214c1.378 0 2.373 1.27 1.995 2.548l-1.654 5.6C19.01 14.408 18.196 15 17.27 15H8.112c-.927 0-1.742-.593-1.996-1.452zm0 0L3 3"/></svg>
-            <p>3</p>
+            <p>{cart.length}</p>
         </div>
       </div>
       
