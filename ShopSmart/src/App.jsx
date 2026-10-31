@@ -24,9 +24,9 @@ function App() {
     }
         const check =  cart.some( item=> item.id === newid)
     if(check){
-      setCart(prev=> prev.map(item=> item.id === newid ? {...item , quantity : item.quantity + 1} : item))
+      setCart(cart.map((item)=> item.id === newid ? {...item , quantity:  item.quantity + 1} : item))
     }else{
-setCart([...cart , Addedtocart])
+      setCart([...cart , Addedtocart])
     }
   
   
@@ -34,7 +34,7 @@ setCart([...cart , Addedtocart])
      console.log(check)
     
   };
-
+ 
   const ModalInfo = (modalData) => {
     setItemID(modalData);
   };
