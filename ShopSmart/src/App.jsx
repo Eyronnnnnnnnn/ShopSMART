@@ -48,7 +48,7 @@ function App() {
     );
   }
   return (
-    <div className="bg-blue-100/30 w-full min-h-screen">
+    <div className="bg-blue-100/30 w-full  min-h-screen">
        <Header 
        cart={cart}
        />
@@ -60,9 +60,11 @@ function App() {
         AddtocarsBtm={AddtocarsBtm}
         setModal={setModal}
         ModalInfo={ModalInfo}
-        
+       
       />
+       
     </div>
+    
   );
 }
 
