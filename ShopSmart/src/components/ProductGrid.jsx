@@ -1,6 +1,6 @@
 import CategoryChips from "./CategoryChips"
 
-export default function  ProductGrid({data,AddtocarsBtm,setModal,ModalInfo}){
+export default function  ProductGrid({data,AddtocarsBtm,setModal,ModalInfo,cart}){
     if(!data) {
         console.log("Cant Fetch Data")
         return <h1>Cant fetch dataa </h1>
@@ -51,7 +51,7 @@ export default function  ProductGrid({data,AddtocarsBtm,setModal,ModalInfo}){
                 onClick={()=>{
                      setModal(true);
                ModalInfo(data);
-                AddtocarsBtm(data.id)
+                AddtocarsBtm(data.id,data.title,data.price)
                
                 }}
                 className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium rounded-lg px-3 py-2 transition">
@@ -65,7 +65,8 @@ export default function  ProductGrid({data,AddtocarsBtm,setModal,ModalInfo}){
                 </div>
                 </div>
                 {/* right side */}
-                <div className=" w-full lg:w-112 shrink-0 flex justify-center">
+               
+                <divs className=" w-full lg:w-112 shrink-0 flex justify-center">
 
                     {/* Add to cart */}
                    <div className="bg-white w-85 h-80 rounded-lg  p-4">
@@ -73,7 +74,8 @@ export default function  ProductGrid({data,AddtocarsBtm,setModal,ModalInfo}){
                         <h1 className="font-bold text-lg">Your cart</h1>
                     </div>
                     {/* cart list */}
-                    <div className=" h-37 ">
+                     {cart.map((cart)=>(
+                          <div key={cart} className=" h-37 ">
                        <div className="  mt-5 flex justify-between">
                         <div>
                         <p>Lash Mascara</p>
@@ -96,6 +98,8 @@ export default function  ProductGrid({data,AddtocarsBtm,setModal,ModalInfo}){
                        
                     </div>
                     </div>
+                    ))}
+                  
                     <div className=" h-20 flex flex-col justify-between">
                         <div className="flex justify-between">
                            <div>
@@ -117,7 +121,7 @@ export default function  ProductGrid({data,AddtocarsBtm,setModal,ModalInfo}){
                         
                     </div>
                    </div>
-                </div>
+                </divs>
             </div>
         </div>
     )

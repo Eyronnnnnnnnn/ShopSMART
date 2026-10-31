@@ -9,12 +9,17 @@ import ErrorModal from "./components/errorModal.jsx";
 import "./App.css";
 
 function App() {
-  // const [cart ,setCart ] = useState(null);
+  const [cart ,setCart ] = useState([]);
   const [modal, setModal] = useState(false);
   const [itemID, setItemID] = useState(null);
 
-  const AddtocarsBtm = (id) => {
-    console.log(`Click ${id}`);
+  const AddtocarsBtm = (newid,newtitle,newprice) => {
+    const Addedtocart = [
+      {id : newid},
+      {title : newtitle},
+      {price :newprice }
+    ]
+    setCart([...cart , ])
   };
 
   const ModalInfo = (modalData) => {
@@ -35,10 +40,11 @@ function App() {
   }
   return (
     <div className="bg-blue-100/30 w-full min-h-screen">
-      <Header />
-      <ErrorModal loading={loading} />
-      <PurchasModal modal={modal} setModal={setModal} itemID={itemID} />
-      <ProductGrid
+       <Header />
+       <ErrorModal loading={loading} />
+       <PurchasModal modal={modal} setModal={setModal} itemID={itemID} />
+       <ProductGrid
+        cart={cart}
         data={data.products}
         AddtocarsBtm={AddtocarsBtm}
         setModal={setModal}
