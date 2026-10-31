@@ -22,11 +22,17 @@ function App() {
       quantity: quantity,
       thumbnail : newthumbnail 
     }
-      const check =  cart.some( item=> item.id === newid)
+        const check =  cart.some( item=> item.id === newid)
+    if(check){
+      setCart(prev=> prev.map(item=> item.id === newid ? {...item , quantity : item.quantity + 1} : item))
+    }else{
+setCart([...cart , Addedtocart])
+    }
+  
   
    
      console.log(check)
-    setCart([...cart , Addedtocart])
+    
   };
 
   const ModalInfo = (modalData) => {
