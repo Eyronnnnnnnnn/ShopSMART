@@ -12,7 +12,7 @@ export default function ProductGrid({
     return <h1>Cant fetch dataa </h1>;
   }
 
-  const totalCartPrice = cart.reduce((sum , prouduct)=> {return sum + prouduct.price})
+  const totalCartPrice = cart.reduce((sum , product)=> {return sum + product.price * product.quantity}, 0)
   return (
     <div className=" min-h-159">
       <CategoryChips />
@@ -131,7 +131,7 @@ export default function ProductGrid({
                 <h1 className="font-bold">TOTAL</h1>
 
                 <h1 className="font-bold">
-                  ${totalCartPrice}
+                  ${totalCartPrice.toFixed(2)}
                 </h1>
               </div>
 
