@@ -11,6 +11,8 @@ export default function ProductGrid({
     console.log("Cant Fetch Data");
     return <h1>Cant fetch dataa </h1>;
   }
+
+  const totalCartPrice = cart.reduce((sum , prouduct)=> {return sum + prouduct.price})
   return (
     <div className=" min-h-159">
       <CategoryChips />
@@ -129,7 +131,7 @@ export default function ProductGrid({
                 <h1 className="font-bold">TOTAL</h1>
 
                 <h1 className="font-bold">
-                  $
+                  ${totalCartPrice}
                 </h1>
               </div>
 
