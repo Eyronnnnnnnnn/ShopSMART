@@ -28,7 +28,7 @@ export default function ProductGrid({
             <p className="text-gray-600 mb-5">Showing 6 of Total</p>
           </div>
           <div className="grid grid-cols-3 gap-3 h-[600px] overflow-y-auto">
-            {data.map((data) => (
+            {searched.map((data) => (
               <div
                 key={data.id}
                 className="bg-white w-80 min-w-0 rounded-2xl p-3 shadow-sm border border-gray-200 hover:shadow-lg transition duration-300 flex flex-col"
