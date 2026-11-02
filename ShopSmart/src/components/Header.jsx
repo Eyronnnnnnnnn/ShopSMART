@@ -1,6 +1,6 @@
 import { useState ,useEffect,useRef} from "react";
 
-export default function Header({cart}) {
+export default function Header({cart,search,setSearch}) {
   
   const inputRef = useRef(null)
 
@@ -28,6 +28,8 @@ export default function Header({cart}) {
         <div className="w-full md:w-148">
             <input 
             ref={inputRef}
+            value={search}
+            onChange={(e)=>setSearch(e.target.value)}
             className="w-full max-w-232 h-10 border-2 border-gray-200 rounded-lg pl-4"
             placeholder="Search Products "
             type="text" />

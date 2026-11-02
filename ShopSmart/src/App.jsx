@@ -67,6 +67,7 @@ function App() {
        <Header 
        cart={cart}
        search={search}
+       setSearch={setSearch}
        />
        <ErrorModal loading={loading} />
        <PurchasModal modal={modal} setModal={setModal} itemID={itemID} />
