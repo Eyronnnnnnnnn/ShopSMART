@@ -13,7 +13,7 @@ function App() {
   const [modal, setModal] = useState(false);
   const [itemID, setItemID] = useState(null);
   const [quantity,setQuantity] = useState(1);
-    const [search ,setSearch] = useState(null);
+    const [search ,setSearch] = useState("");
 
   const AddtocarsBtm = (newid,newtitle,newprice,newthumbnail) => {
     const Addedtocart = {
