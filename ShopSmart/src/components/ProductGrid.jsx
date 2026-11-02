@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import CategoryChips from "./CategoryChips";
 
 export default function ProductGrid({
@@ -11,6 +12,8 @@ export default function ProductGrid({
     console.log("Cant Fetch Data");
     return <h1>Cant fetch dataa </h1>;
   }
+
+  
 
   const totalCartPrice = cart.reduce((sum , product)=> {return sum + product.price * product.quantity}, 0)
   return (

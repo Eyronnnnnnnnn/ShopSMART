@@ -13,6 +13,7 @@ function App() {
   const [modal, setModal] = useState(false);
   const [itemID, setItemID] = useState(null);
   const [quantity,setQuantity] = useState(1);
+    const [search ,setSearch] = useState(null);
 
   const AddtocarsBtm = (newid,newtitle,newprice,newthumbnail) => {
     const Addedtocart = {
@@ -65,6 +66,7 @@ function App() {
     <div className="bg-blue-100/30 w-full  min-h-screen">
        <Header 
        cart={cart}
+       search={search}
        />
        <ErrorModal loading={loading} />
        <PurchasModal modal={modal} setModal={setModal} itemID={itemID} />

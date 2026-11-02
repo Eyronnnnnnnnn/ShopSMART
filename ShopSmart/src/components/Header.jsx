@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { useState ,useEffect,useRef} from "react";
 
 export default function Header({cart}) {
- 
+  
+  const inputRef = useRef(null)
+
+  useEffect(()=>{
+    inputRef.current.focus()
+  },[])
 
   const cartcount = cart.reduce((sum,prod)=> {
     return sum + prod.quantity},0)
@@ -22,6 +27,7 @@ export default function Header({cart}) {
        <div className=" w-full md:flex-1 px-4 md:px-0 py-3 md:py-0 flex items-center justify-end">
         <div className="w-full md:w-148">
             <input 
+            ref={inputRef}
             className="w-full max-w-232 h-10 border-2 border-gray-200 rounded-lg pl-4"
             placeholder="Search Products "
             type="text" />
