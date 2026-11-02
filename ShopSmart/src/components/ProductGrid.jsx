@@ -7,13 +7,14 @@ export default function ProductGrid({
   setModal,
   ModalInfo,
   cart,
+  search
 }) {
   if (!data) {
     console.log("Cant Fetch Data");
     return <h1>Cant fetch dataa </h1>;
   }
 
-  
+  const searched = data.filter((product)=> product.title.toLowerCase().includes(search.toLowerCase()))
 
   const totalCartPrice = cart.reduce((sum , product)=> {return sum + product.price * product.quantity}, 0)
   return (

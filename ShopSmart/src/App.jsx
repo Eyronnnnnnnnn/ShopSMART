@@ -77,6 +77,7 @@ function App() {
         AddtocarsBtm={AddtocarsBtm}
         setModal={setModal}
         ModalInfo={ModalInfo}
+        search={search}
        
       />
        
