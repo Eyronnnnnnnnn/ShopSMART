@@ -7,7 +7,7 @@ const [debounceValue , setDebounceValue] = useState(search);
     useEffect(()=>{
         const timer = setTimeout(()=>{
             setDebounceValue(search)
-        },500);
+        },delay);
         return ()=> clearTimeout(timer)
     },[search,delay])
      return debounceValue

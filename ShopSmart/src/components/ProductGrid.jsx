@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import CategoryChips from "./CategoryChips";
+import useDebounce from "../hooks/useDebounce";
 
 export default function ProductGrid({
   data,
