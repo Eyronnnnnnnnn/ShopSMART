@@ -1,89 +1,89 @@
-import { useState } from "react";
-import Header from "./components/Header.jsx";
-import CategoryChips from "./components/CategoryChips.jsx";
-import ProductGrid from "./components/ProductGrid.jsx";
-import useFetch from "./hooks/useFetch.jsx";
-import PurchasModal from "./components/PurchaseModal.jsx";
-import ErrorModal from "./components/errorModal.jsx";
+  import { useState } from "react";
+  import Header from "./components/Header.jsx";
+  import CategoryChips from "./components/CategoryChips.jsx";
+  import ProductGrid from "./components/ProductGrid.jsx";
+  import useFetch from "./hooks/useFetch.jsx";
+  import PurchasModal from "./components/PurchaseModal.jsx";
+  import ErrorModal from "./components/errorModal.jsx";
 
-import "./App.css";
+  import "./App.css";
 
-function App() {
-  const [cart ,setCart ] = useState([]);
-  const [modal, setModal] = useState(false);
-  const [itemID, setItemID] = useState(null);
-  const [quantity,setQuantity] = useState(1);
-    const [search ,setSearch] = useState("");
+  function App() {
+    const [cart ,setCart ] = useState([]);
+    const [modal, setModal] = useState(false);
+    const [itemID, setItemID] = useState(null);
+    const [quantity,setQuantity] = useState(1);
+      const [search ,setSearch] = useState("");
 
-  const AddtocarsBtm = (newid,newtitle,newprice,newthumbnail) => {
-    const Addedtocart = {
-      id : newid,
-      title : newtitle,
-      price :newprice ,
-      quantity: quantity,
-      thumbnail : newthumbnail 
-    }
-        const check =  cart.some( item=> item.id === newid)
-    if(check){
-      setCart(cart.map((item)=> item.id === newid ? {...item , quantity:  item.quantity + 1} : item))
-    }else{
-      setCart([...cart , Addedtocart])
-    }
-  
-  
-   
-     console.log(check)
+    const AddtocarsBtm = (newid,newtitle,newprice,newthumbnail) => {
+      const Addedtocart = {
+        id : newid,
+        title : newtitle,
+        price :newprice ,
+        quantity: quantity,
+        thumbnail : newthumbnail 
+      }
+          const check =  cart.some( item=> item.id === newid)
+      if(check){
+        setCart(cart.map((item)=> item.id === newid ? {...item , quantity:  item.quantity + 1} : item))
+      }else{
+        setCart([...cart , Addedtocart])
+      }
     
-  };
- 
-  const ModalInfo = (modalData) => {
-    setItemID(modalData);
-  };
+    
+    
+      console.log(check)
+      
+    };
+  
+    const ModalInfo = (modalData) => {
+      setItemID(modalData);
+    };
 
-  const incrementCartProduct = () => {
-    console.log("working")
-  }
+    const incrementCartProduct = () => {
+      console.log("working")
+    }
 
-    const decrementCartProduct = () => {
-    console.log("working")
-  }
- 
- 
+      const decrementCartProduct = () => {
+      console.log("working")
+    }
+  
+  
 
-  const { data, loading, error } = useFetch("https://dummyjson.com/products");
-  console.log(data);
-  if (loading) {
-    console.log("CANT FETCH DATA");
+    const { data, loading, error } = useFetch("https://dummyjson.com/products");
+    console.log(data);
+    if (loading) {
+      console.log("CANT FETCH DATA");
+      return (
+        <div>
+          <ErrorModal 
+          loading = { loading}
+          />
+        </div>
+      );
+    }
     return (
-      <div>
-        <ErrorModal 
-        loading = { loading}
+      <div className="bg-blue-100/30 w-full  min-h-screen">
+        <Header 
+        cart={cart}
+        search={search}
+        setSearch={setSearch}
         />
+        <ErrorModal loading={loading} />
+        <PurchasModal modal={modal} setModal={setModal} itemID={itemID} />
+        <ProductGrid
+          cart={cart}
+          data={data.products}
+          AddtocarsBtm={AddtocarsBtm}
+          setModal={setModal}
+          ModalInfo={ModalInfo}
+          search={search}
+        
+        />
+        
       </div>
+      
     );
   }
-  return (
-    <div className="bg-blue-100/30 w-full  min-h-screen">
-       <Header 
-       cart={cart}
-       search={search}
-       setSearch={setSearch}
-       />
-       <ErrorModal loading={loading} />
-       <PurchasModal modal={modal} setModal={setModal} itemID={itemID} />
-       <ProductGrid
-        cart={cart}
-        data={data.products}
-        AddtocarsBtm={AddtocarsBtm}
-        setModal={setModal}
-        ModalInfo={ModalInfo}
-        search={search}
-       
-      />
-       
-    </div>
-    
-  );
-}
 
-export default App;
+  export default App;
