@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import CategoryChips from "./CategoryChips";
-im
+import useDebounce from "../hooks/useDebounce";
 
 export default function ProductGrid({
   data,
@@ -17,8 +17,8 @@ export default function ProductGrid({
     return <h1>Cant fetch dataa </h1>;
   }
 
-
-  const searched = data.filter((product)=> product.title.toLowerCase().includes(search.toLowerCase()))
+  const delaysearched = useDebounce(search ,500)
+  const searched = data.filter((product)=> product.title.toLowerCase().includes(delaysearched.toLowerCase()))
 
   const totalCartPrice = cart.reduce((sum , product)=> {return sum + product.price * product.quantity}, 0)
   return (

@@ -5,6 +5,7 @@ const useDebounce = (search,delay)=>{
   useEffect(()=>{
     const timer = setTimeout(()=>{
         setDebounce(search)
+       
     },delay)
 
     return ()=>{
