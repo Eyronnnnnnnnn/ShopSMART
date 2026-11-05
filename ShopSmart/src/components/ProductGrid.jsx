@@ -11,9 +11,7 @@ export default function ProductGrid({
   cart,
   search
 }) {
-  
-  
-  
+  // aaronguillermo123456789@gmail.com [a][a][r][o][n] [g][u][i][l][l][e][r][m][o]
   const delaysearched = useDebounce(search ,500)
 
   if (!data ) {
