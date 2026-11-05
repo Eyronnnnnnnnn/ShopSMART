@@ -13,6 +13,7 @@ export default function ProductGrid({
 }) {
   
   
+  
   const delaysearched = useDebounce(search ,500)
 
   if (!data ) {
