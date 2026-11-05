@@ -7,7 +7,6 @@ const useDebounce = (search,delay)=>{
         setDebounce(search)
        
     },delay)
-
     return ()=>{
         clearTimeout(timer);
     }

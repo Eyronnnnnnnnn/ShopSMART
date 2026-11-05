@@ -12,12 +12,14 @@ export default function ProductGrid({
 }) {
   
   
-  if (!data) {
+  const delaysearched = useDebounce(search ,500)
+
+  if (!data ) {
     console.log("Cant Fetch Data");
     return <h1>Cant fetch dataa </h1>;
   }
 
-  const delaysearched = useDebounce(search ,500)
+  
   const searched = data.filter((product)=> product.title.toLowerCase().includes(delaysearched.toLowerCase()))
 
   const totalCartPrice = cart.reduce((sum , product)=> {return sum + product.price * product.quantity}, 0)
